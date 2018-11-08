@@ -73,12 +73,13 @@
   </div>
 </div>
 
-<div ng-if="org.id && gridOptions.data.length" class="panel panel-primary">
+<div ng-if="org.id" class="panel panel-primary">
   <div class="panel-heading">
     <h3 class="panel-title">Memberships</h3>
   </div>
   <div class="panel-body">
-    <div ui-grid="gridOptions" ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize></div>
+    <div ng-if="gridOptions.data.length" ui-grid="gridOptions" ui-grid-exporter ui-grid-resize-columns ui-grid-auto-resize></div>
+    <div ng-if="!gridOptions.data.length">No memberships available.</div>
   </div>
 </div>
 
